@@ -1,26 +1,311 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (Tailwind v4). Toggling .dark on <html> switches theme. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ============================================================
+   THE WEAVE — AHDO Regional Reference
+   Design tokens. Light = :root, Dark = .dark. All AA-checked.
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Surfaces & text */
+  --background: #f5f1e8;        /* Rice Paper */
+  --card: #fcfaf4;
+  --card-sunken: #ece7da;
+  --popover: #ffffff;
+  --foreground: #1a1a17;        /* Sumi Ink */
+  --foreground-secondary: #4a453c;
+  --muted-foreground: #5f5a4e;
+  --border: #dbd5c6;            /* Loom-line */
+  --border-strong: #c2bcaa;
+
+  /* Brand — Natural-dye Indigo */
+  --primary: #1e3a5f;
+  --primary-hover: #16304f;
+  --primary-foreground: #f5f1e8;
+  --primary-tint: #e4eaf1;
+  --primary-tint-foreground: #16304f;
+
+  /* Jade — secondary / growth */
+  --secondary: #0e6e56;
+  --secondary-hover: #0b5a46;
+  --secondary-foreground: #f5f1e8;
+  --secondary-tint: #e0f1ea;
+  --secondary-tint-foreground: #0b5240;
+
+  /* Turmeric Gold — AHDI / highlight (fills, dots, strokes) */
+  --accent: #c08a1e;
+  --accent-foreground: #2a1d04;
+  --accent-text: #8a5a12;       /* turmeric as small TYPE on light */
+  --accent-tint: #f7ebd2;
+  --accent-tint-foreground: #7a4e10;
+
+  /* Terracotta — errors / divergence only */
+  --destructive: #b5482e;
+  --destructive-foreground: #f5f1e8;
+
+  --ring: #1e3a5f;
+
+  /* AHDI sequential ramp (low -> high), decoupled from brand hue */
+  --ramp-1: #b5482e;
+  --ramp-2: #d97a3d;
+  --ramp-3: #e0a93f;
+  --ramp-4: #7fa86b;
+  --ramp-5: #1d9e75;
+  --ramp-6: #0e6e56;
+
+  /* Categorical series */
+  --cat-1: #1e3a5f;
+  --cat-2: #c08a1e;
+  --cat-3: #0e6e56;
+  --cat-4: #b5482e;
+  --cat-5: #6a6f86;
+  --cat-6: #7a8c3f;
+
+  /* Radii */
+  --radius-sm: 5px;
+  --radius: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-hover: 0 2px 8px rgba(26, 26, 23, 0.06);
+  --shadow-card-dark: 0 1px 0 rgba(242, 236, 221, 0.04), 0 4px 16px rgba(0, 0, 0, 0.32);
+  --shadow-hover-dark: 0 6px 20px rgba(0, 0, 0, 0.4);
+
+  color-scheme: light;
 }
 
+.dark {
+  --background: #12181c;        /* warm deep ink */
+  --card: #1a2227;
+  --card-sunken: #0e1316;
+  --popover: #1a2227;
+  --foreground: #f2ecdd;        /* Bone */
+  --foreground-secondary: #bcc4be;
+  --muted-foreground: #94a199;
+  --border: rgba(242, 236, 221, 0.12);
+  --border-strong: rgba(242, 236, 221, 0.22);
+
+  --primary: #7fa6ce;           /* lifted indigo */
+  --primary-hover: #9bbbdc;
+  --primary-foreground: #12181c;
+  --primary-tint: #1b2d3f;
+  --primary-tint-foreground: #c7d8e8;
+
+  --secondary: #3fb48a;         /* bright jade */
+  --secondary-hover: #57c49b;
+  --secondary-foreground: #12181c;
+  --secondary-tint: #11302a;
+  --secondary-tint-foreground: #8fd9c2;
+
+  --accent: #e0a93f;            /* warm turmeric */
+  --accent-foreground: #12181c;
+  --accent-text: #e0a93f;       /* legible as type on dark */
+  --accent-tint: #2e2410;
+  --accent-tint-foreground: #efc871;
+
+  --destructive: #e07a5f;
+  --destructive-foreground: #12181c;
+
+  --ring: #9bbbdc;
+
+  /* Categorical (brightened for dark) */
+  --cat-1: #7fa6ce;
+  --cat-2: #e0a93f;
+  --cat-3: #3fb48a;
+  --cat-4: #e07a5f;
+  --cat-5: #a2a6be;
+  --cat-6: #b6c76a;
+
+  color-scheme: dark;
+}
+
+/* Map raw tokens to Tailwind utilities (inline = utilities reference the vars,
+   so .dark overrides apply at runtime). */
 @theme inline {
   --color-background: var(--background);
+  --color-card: var(--card);
+  --color-card-sunken: var(--card-sunken);
+  --color-popover: var(--popover);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-tint: var(--primary-tint);
+  --color-primary-tint-foreground: var(--primary-tint-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary-tint: var(--secondary-tint);
+  --color-secondary-tint-foreground: var(--secondary-tint-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-text: var(--accent-text);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-tint-foreground: var(--accent-tint-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-ring: var(--ring);
+
+  --color-ramp-1: var(--ramp-1);
+  --color-ramp-2: var(--ramp-2);
+  --color-ramp-3: var(--ramp-3);
+  --color-ramp-4: var(--ramp-4);
+  --color-ramp-5: var(--ramp-5);
+  --color-ramp-6: var(--ramp-6);
+
+  --color-cat-1: var(--cat-1);
+  --color-cat-2: var(--cat-2);
+  --color-cat-3: var(--cat-3);
+  --color-cat-4: var(--cat-4);
+  --color-cat-5: var(--cat-5);
+  --color-cat-6: var(--cat-6);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ============================================================
+   Base
+   ============================================================ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), ui-serif, Georgia, serif;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ============================================================
+   Utilities & primitives
+   ============================================================ */
+@layer components {
+  /* Page container: 1200px max with fluid gutters */
+  .container-page {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 80px);
+  }
+
+  /* Section vertical rhythm */
+  .section-y {
+    padding-block: clamp(4rem, 8vw, 7rem);
+  }
+  .section-y-sm {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  /* Mono eyebrow / label */
+  .eyebrow {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Data voice: tabular mono */
+  .font-data {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Reading measure */
+  .measure {
+    max-width: 68ch;
+  }
+
+  /* Loom-grid substrate (<=4% opacity), forbidden behind text/charts */
+  .loom-grid {
+    background-image:
+      linear-gradient(to right, var(--foreground) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--foreground) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: 0.04;
+  }
+
+  /* Woven band — 3px alternating warp/weft selvedge */
+  .weave-band {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--primary) 0,
+      var(--primary) 14px,
+      var(--accent) 14px,
+      var(--accent) 22px
+    );
+  }
+
+  /* Skeleton / awaiting-data shimmer (used by the AHDI preview) */
+  .ahdi-shimmer {
+    background-image: linear-gradient(
+      90deg,
+      var(--primary-tint) 0%,
+      var(--primary) 45%,
+      var(--accent) 60%,
+      var(--primary) 75%,
+      var(--primary-tint) 100%
+    );
+    background-size: 220% 100%;
+    animation: ahdi-sweep 2.6s ease-in-out infinite;
+  }
+}
+
+@keyframes ahdi-sweep {
+  0% { background-position: 180% 0; }
+  100% { background-position: -80% 0; }
+}
+
+@keyframes weave-reveal {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }

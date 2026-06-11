@@ -1,0 +1,5 @@
+# Pre-launch preview — do not index.
+# Remove or replace this file (and the `robots` metadata in src/app/layout.tsx)
+# before the site goes public.
+User-agent: *
+Disallow: /
