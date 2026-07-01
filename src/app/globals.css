@@ -9,55 +9,60 @@
    ============================================================ */
 :root {
   /* Surfaces & text */
-  --background: #f5f1e8;        /* Rice Paper */
+  --background: #f5f1e8;
   --card: #fcfaf4;
   --card-sunken: #ece7da;
   --popover: #ffffff;
-  --foreground: #1a1a17;        /* Sumi Ink */
+  --foreground: #1a1a17;
   --foreground-secondary: #4a453c;
   --muted-foreground: #5f5a4e;
-  --border: #dbd5c6;            /* Loom-line */
+  --border: #dbd5c6;
   --border-strong: #c2bcaa;
 
-  /* Brand — Natural-dye Indigo */
-  --primary: #1e3a5f;
-  --primary-hover: #16304f;
-  --primary-foreground: #f5f1e8;
-  --primary-tint: #e4eaf1;
-  --primary-tint-foreground: #16304f;
+  /* AHDO Royal Blue (from the AHDO wordmark) */
+  --primary: #1a4285;
+  --primary-hover: #153672;
+  --primary-foreground: #ffffff;
+  --primary-tint: #e0e8f4;
+  --primary-tint-foreground: #1a4285;
 
-  /* Jade — secondary / growth */
-  --secondary: #0e6e56;
-  --secondary-hover: #0b5a46;
-  --secondary-foreground: #f5f1e8;
-  --secondary-tint: #e0f1ea;
-  --secondary-tint-foreground: #0b5240;
+  /* AHDO Green (from "ASEAN Human Development Organisation" tagline) */
+  --secondary: #2e7842;
+  --secondary-hover: #256835;
+  --secondary-foreground: #ffffff;
+  --secondary-tint: #e2f2e7;
+  --secondary-tint-foreground: #1e5a2e;
 
-  /* Turmeric Gold — AHDI / highlight (fills, dots, strokes) */
-  --accent: #c08a1e;
-  --accent-foreground: #2a1d04;
-  --accent-text: #8a5a12;       /* turmeric as small TYPE on light */
-  --accent-tint: #f7ebd2;
-  --accent-tint-foreground: #7a4e10;
+  /* AHDO Teal (gradient end of AHDO wordmark) — highlights */
+  --accent: #1797be;
+  --accent-foreground: #ffffff;
+  --accent-text: #0e6e8e;
+  --accent-tint: #ddf1f8;
+  --accent-tint-foreground: #0a5570;
 
-  /* Terracotta — errors / divergence only */
+  /* Errors / divergence only */
   --destructive: #b5482e;
-  --destructive-foreground: #f5f1e8;
+  --destructive-foreground: #ffffff;
 
-  --ring: #1e3a5f;
+  --ring: #1a4285;
 
-  /* AHDI sequential ramp (low -> high), decoupled from brand hue */
+  /* Fonts — Calibri first; system/web-safe fallbacks for non-Windows */
+  --font-display: 'Calibri', 'Trebuchet MS', 'Gill Sans MT', Arial, sans-serif;
+  --font-sans: 'Calibri', 'Trebuchet MS', 'Gill Sans MT', Arial, sans-serif;
+  --font-mono: 'Consolas', 'Courier New', monospace;
+
+  /* AHDI sequential ramp (low -> high) */
   --ramp-1: #b5482e;
   --ramp-2: #d97a3d;
   --ramp-3: #e0a93f;
   --ramp-4: #7fa86b;
   --ramp-5: #1d9e75;
-  --ramp-6: #0e6e56;
+  --ramp-6: #2e7842;
 
   /* Categorical series */
-  --cat-1: #1e3a5f;
-  --cat-2: #c08a1e;
-  --cat-3: #0e6e56;
+  --cat-1: #1a4285;
+  --cat-2: #1797be;
+  --cat-3: #2e7842;
   --cat-4: #b5482e;
   --cat-5: #6a6f86;
   --cat-6: #7a8c3f;
@@ -87,33 +92,33 @@
   --border: rgba(242, 236, 221, 0.12);
   --border-strong: rgba(242, 236, 221, 0.22);
 
-  --primary: #7fa6ce;           /* lifted indigo */
-  --primary-hover: #9bbbdc;
+  --primary: #7fb0de;
+  --primary-hover: #9bc3e8;
   --primary-foreground: #12181c;
   --primary-tint: #1b2d3f;
   --primary-tint-foreground: #c7d8e8;
 
-  --secondary: #3fb48a;         /* bright jade */
-  --secondary-hover: #57c49b;
+  --secondary: #4cc87a;
+  --secondary-hover: #63d48e;
   --secondary-foreground: #12181c;
-  --secondary-tint: #11302a;
-  --secondary-tint-foreground: #8fd9c2;
+  --secondary-tint: #0f2e1a;
+  --secondary-tint-foreground: #8fd9b0;
 
-  --accent: #e0a93f;            /* warm turmeric */
+  --accent: #45bde0;
   --accent-foreground: #12181c;
-  --accent-text: #e0a93f;       /* legible as type on dark */
-  --accent-tint: #2e2410;
-  --accent-tint-foreground: #efc871;
+  --accent-text: #45bde0;
+  --accent-tint: #0d2a35;
+  --accent-tint-foreground: #8ddcf4;
 
   --destructive: #e07a5f;
   --destructive-foreground: #12181c;
 
-  --ring: #9bbbdc;
+  --ring: #7fb0de;
 
   /* Categorical (brightened for dark) */
-  --cat-1: #7fa6ce;
-  --cat-2: #e0a93f;
-  --cat-3: #3fb48a;
+  --cat-1: #7fb0de;
+  --cat-2: #45bde0;
+  --cat-3: #4cc87a;
   --cat-4: #e07a5f;
   --cat-5: #a2a6be;
   --cat-6: #b6c76a;
@@ -205,8 +210,7 @@
     color: var(--accent-foreground);
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-display), ui-serif, Georgia, serif;
-    font-optical-sizing: auto;
+    font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
     text-wrap: balance;
   }
   :focus-visible {

@@ -1,31 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE } from "@/content/site";
-
-const fraunces = Fraunces({
-  // Variable font: opsz + wght axes. Do not also pin `weight` (Next.js rejects that combo).
-  subsets: ["latin", "latin-ext"],
-  axes: ["opsz"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.aseanhdo.com"),
@@ -72,7 +49,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${jakarta.variable} ${plexMono.variable} h-full`}
+      className="h-full"
     >
       <body className="min-h-full flex flex-col antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
