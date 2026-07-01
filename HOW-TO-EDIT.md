@@ -24,7 +24,7 @@ That is the whole setup. You won't do it again.
 ## Making a change (every time)
 
 1. Go to **https://claude.ai/code**.
-2. Choose the project **olivercrocco/aseanhdo-site**. Leave the branch as **main**.
+2. Choose the project **aseanhdo/aseanhdo-site**. Leave the branch as **main**.
 3. Type what you want, in plain English. For example:
    - "On the About page, change the director's title to Chair."
    - "Add a sentence to the homepage about our 2026 conference."
