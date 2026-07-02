@@ -16,7 +16,7 @@ export function Logo({
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/images/ahdo-logo.png"
+        src="/images/ahdo-logo.svg"
         alt="AHDO — ASEAN Human Development Organisation"
         className="h-10 w-auto"
       />
