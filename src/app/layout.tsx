@@ -32,15 +32,13 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f5f1e8" },
-    { media: "(prefers-color-scheme: dark)", color: "#12181c" },
-  ],
+  themeColor: "#f5f1e8",
   colorScheme: "light dark",
 };
 
-// Set theme class before paint to avoid a flash.
-const themeScript = `(function(){try{var t=localStorage.getItem('ahdo-theme');var m=window.matchMedia('(prefers-color-scheme: dark)').matches;if(t==='dark'||(t!=='light'&&m)){document.documentElement.classList.add('dark');}}catch(e){}})();`;
+// Set theme class before paint to avoid a flash. Brand default is light: dark is
+// only applied when the visitor has explicitly chosen it via the toggle.
+const themeScript = `(function(){try{if(localStorage.getItem('ahdo-theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`;
 
 export default function RootLayout({
   children,
