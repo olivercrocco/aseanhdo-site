@@ -2,8 +2,8 @@ import { Section } from "@/components/ui/container";
 import { Eyebrow } from "@/components/ui/section-heading";
 import { PageHeader } from "@/components/page-header";
 import { ButtonLink } from "@/components/ui/button";
-import { Card, CardMeta, CardTitle } from "@/components/ui/card";
 import { Photo } from "@/components/ui/photo";
+import { PublicationCard } from "@/components/publication-card";
 
 import { PUBLICATIONS, type PublicationType } from "@/content/publications";
 import { MEDIA } from "@/content/media";
@@ -22,13 +22,6 @@ const groups = TYPE_ORDER.map((type) => ({
 
 // Section tones alternate down the archive for vertical rhythm.
 const GROUP_TONES = ["paper", "sunken", "card"] as const;
-
-/** Compose the mono meta line: type, with year and/or publisher when present. */
-function metaLine(pub: (typeof PUBLICATIONS)[number]) {
-  return [pub.type, pub.year?.toString(), pub.publisher]
-    .filter(Boolean)
-    .join(" · ");
-}
 
 export default function PublicationsPage() {
   return (
@@ -63,16 +56,7 @@ export default function PublicationsPage() {
           <Eyebrow>Featured</Eyebrow>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {featuredPubs.map((pub) => (
-              <Card key={pub.slug} href={pub.url} accent="research" className="gap-4">
-                <CardMeta>{metaLine(pub)}</CardMeta>
-                <CardTitle>{pub.title}</CardTitle>
-                <p className="text-[1.125rem] leading-relaxed text-foreground-secondary">
-                  {pub.description}
-                </p>
-                <p className="mt-auto pt-2 font-mono text-[0.8125rem] text-muted-foreground">
-                  {pub.authors}
-                </p>
-              </Card>
+              <PublicationCard key={pub.slug} pub={pub} emphasis />
             ))}
           </div>
         </Section>
@@ -91,16 +75,7 @@ export default function PublicationsPage() {
             <Eyebrow>{group.type}</Eyebrow>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
               {group.items.map((pub) => (
-                <Card key={pub.slug} href={pub.url} accent="research" className="gap-4">
-                  <CardMeta>{metaLine(pub)}</CardMeta>
-                  <CardTitle>{pub.title}</CardTitle>
-                  <p className="text-[1rem] leading-relaxed text-foreground-secondary">
-                    {pub.description}
-                  </p>
-                  <p className="mt-auto pt-2 font-mono text-[0.8125rem] text-muted-foreground">
-                    {pub.authors}
-                  </p>
-                </Card>
+                <PublicationCard key={pub.slug} pub={pub} />
               ))}
             </div>
           </Section>

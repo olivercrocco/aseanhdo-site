@@ -1,7 +1,8 @@
 import { Section, Container } from "@/components/ui/container";
 import { SectionHeading, Eyebrow } from "@/components/ui/section-heading";
 import { ButtonLink } from "@/components/ui/button";
-import { Card, CardMeta, CardTitle } from "@/components/ui/card";
+import { Card, CardTitle } from "@/components/ui/card";
+import { PublicationCard } from "@/components/publication-card";
 import { StatCard } from "@/components/ui/stat-card";
 import { Badge, AccreditationPill } from "@/components/ui/badge";
 import { ScoreTile } from "@/components/ui/score-tile";
@@ -169,16 +170,7 @@ export default function HomePage() {
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {featuredPubs.map((pub) => (
-            <Card key={pub.slug} href={pub.url} accent="research" className="gap-4">
-              <CardMeta>{pub.type}</CardMeta>
-              <CardTitle>{pub.title}</CardTitle>
-              <p className="text-[1rem] leading-relaxed text-foreground-secondary">
-                {pub.description}
-              </p>
-              <p className="mt-auto pt-2 font-mono text-[0.8125rem] text-muted-foreground">
-                {pub.authors}
-              </p>
-            </Card>
+            <PublicationCard key={pub.slug} pub={pub} />
           ))}
         </div>
       </Section>

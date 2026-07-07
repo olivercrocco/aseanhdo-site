@@ -12,6 +12,12 @@ export type Publication = {
   publisher?: string;
   description: string;
   url: string;
+  /**
+   * Path to the document's cover image, served locally from /public/images
+   * (e.g. "/images/covers/ethics-of-asean.jpg"). When set, the publication
+   * card leads with the cover instead of the coloured content-type band.
+   */
+  cover?: string;
   featured?: boolean;
 };
 
