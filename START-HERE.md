@@ -4,6 +4,12 @@ Welcome! This gets you from zero to making changes on the AHDO website, even if
 you've never used GitHub, a terminal, or Claude Code before. Go one step at a
 time — you don't need to know any code.
 
+> **Most people should use the browser-only guide instead.** If you just want to
+> edit the site from your web browser with nothing to install, follow
+> [HOW-TO-EDIT.md](HOW-TO-EDIT.md) — that is the recommended, canonical path. The
+> steps below describe an alternative terminal-based workflow (installing Claude
+> Code on your computer) and are only for people who specifically want that.
+
 ## How this works (the 30-second version)
 - The website's files live in a shared online folder on **GitHub** (like a
   Dropbox for a website).
@@ -65,7 +71,7 @@ code, and approve.
 In the terminal, start Claude Code (type `claude`, Enter), then type this in plain
 English:
 
-> Clone the repository https://github.com/olivercrocco/aseanhdo-site into this
+> Clone the repository https://github.com/aseanhdo/aseanhdo-site into this
 > folder, then go into it.
 
 Claude downloads the project. (Do this from a sensible place like your Documents
@@ -114,6 +120,6 @@ folder.)
 Ask Claude, one at a time:
 1. "Show me what files are in this project." (it can see the site)
 2. "Make a tiny test edit to the README and publish it." (the full save → publish cycle)
-3. Then open https://github.com/olivercrocco/aseanhdo-site — you should see your change. ✅
+3. Then open https://github.com/aseanhdo/aseanhdo-site — you should see your change. ✅
 
 You're ready to collaborate.
