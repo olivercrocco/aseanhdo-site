@@ -28,7 +28,7 @@ const channels: {
   },
   {
     category: "Certification (Individual)",
-    title: "Certify your practice",
+    title: "Get Certified",
     href: "/courses",
     linkLabel: "View courses",
     accent: "index",
@@ -49,7 +49,6 @@ const channels: {
 const social = [
   ["LinkedIn", SOCIAL.linkedin],
   ["Facebook", SOCIAL.facebook],
-  ["Twitter", SOCIAL.twitter],
 ] as const;
 
 export default function ContactPage() {
@@ -75,7 +74,12 @@ export default function ContactPage() {
               lede="Share a few details and the relevant team will follow up by email."
             />
 
-            <form className="flex flex-col gap-5 rounded-lg border border-border bg-card-sunken p-6 sm:p-7">
+            <form
+              action={`mailto:${CONTACT.email}?subject=AHDO website enquiry`}
+              method="post"
+              encType="text/plain"
+              className="flex flex-col gap-5 rounded-lg border border-border bg-card-sunken p-6 sm:p-7"
+            >
               <div className="flex flex-col gap-2">
                 <label htmlFor="contact-name" className="eyebrow text-muted-foreground">
                   Name
@@ -146,7 +150,7 @@ export default function ContactPage() {
               </button>
 
               <p className="font-mono text-[0.8125rem] leading-relaxed text-muted-foreground">
-                Form delivery activates once the back end is connected.
+                Sending opens your email app to deliver your message to AHDO.
               </p>
             </form>
           </div>

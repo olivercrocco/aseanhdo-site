@@ -19,6 +19,10 @@ export const MEDIA = {
     src: "/images/advocacy.jpg",
     alt: "AHDO advocacy for people-centred development across ASEAN",
   },
+  signing: {
+    src: "/images/signing-ceremony.jpeg",
+    alt: "AHDO leaders at a signing ceremony",
+  },
 } as const;
 
 export type MediaKey = keyof typeof MEDIA;

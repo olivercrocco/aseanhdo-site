@@ -95,7 +95,6 @@ export function SiteFooter() {
                 [
                   ["LinkedIn", SOCIAL.linkedin],
                   ["Facebook", SOCIAL.facebook],
-                  ["Twitter", SOCIAL.twitter],
                 ] as const
               ).map(([label, href]) => (
                 <a

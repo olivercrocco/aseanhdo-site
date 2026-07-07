@@ -28,21 +28,12 @@ export default function HomePage() {
         <div aria-hidden="true" className="loom-grid absolute inset-0" />
         <Container className="relative grid items-center gap-12 pb-16 pt-12 lg:grid-cols-[1.5fr_1fr] lg:pb-24 lg:pt-16">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.8125rem] tracking-wide text-muted-foreground">
-              <span>11 STATES</span>
-              <span aria-hidden="true">·</span>
-              <span>19 CLUSTERS</span>
-              <span aria-hidden="true">·</span>
-              <span>1990–2023</span>
-              <AccreditationPill className="ml-1" />
-            </div>
-
             <h1 className="font-display text-[clamp(2.75rem,6vw,4.5rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground">
-              Understanding how Southeast Asia develops its people.
+              Human development is ASEAN&rsquo;s future
             </h1>
 
             <p className="measure text-[1.25rem] leading-relaxed text-foreground-secondary">
-              {SITE.heroLede}
+              Building the field of human development in ASEAN.
             </p>
 
             <div className="mt-2 flex flex-wrap items-center gap-3">
@@ -63,7 +54,7 @@ export default function HomePage() {
       <Section tone="card" className="border-y border-border">
         <SectionHeading
           eyebrow="What we do"
-          title="A regional institution for human development"
+          title="A regional civil society organisation for human development"
           lede={SITE.mission}
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -212,6 +203,23 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      {/* ===== Signing ceremony (partnership photo band) ===== */}
+      <Section tone="sunken" className="border-y border-border">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <Photo src={MEDIA.signing.src} alt={MEDIA.signing.alt} ratio="16 / 10" />
+          <div className="flex flex-col gap-5">
+            <Eyebrow>Across the region</Eyebrow>
+            <h2 className="font-display text-[clamp(1.75rem,3vw,2.375rem)] font-medium leading-[1.14] tracking-[-0.012em] text-foreground">
+              Working alongside ASEAN&rsquo;s institutions and partners
+            </h2>
+            <p className="measure text-[1.125rem] leading-relaxed text-foreground-secondary">
+              AHDO works alongside ASEAN institutions, governments and civil society to
+              advance human development across the region.
+            </p>
+          </div>
+        </div>
+      </Section>
 
       {/* ===== Events & programmes ===== */}
       <Section tone="card" className="border-y border-border">
