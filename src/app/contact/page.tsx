@@ -28,7 +28,7 @@ const channels: {
   },
   {
     category: "Certification (Individual)",
-    title: "Certify your practice",
+    title: "Get Certified",
     href: "/courses",
     linkLabel: "View courses",
     accent: "index",
