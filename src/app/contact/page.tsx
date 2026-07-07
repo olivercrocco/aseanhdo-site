@@ -49,7 +49,6 @@ const channels: {
 const social = [
   ["LinkedIn", SOCIAL.linkedin],
   ["Facebook", SOCIAL.facebook],
-  ["Twitter", SOCIAL.twitter],
 ] as const;
 
 export default function ContactPage() {

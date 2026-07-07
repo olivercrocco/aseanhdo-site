@@ -38,7 +38,6 @@ export const NAV: NavItem[] = [
 export const SOCIAL = {
   linkedin: "https://www.linkedin.com/groups/10200261/",
   facebook: "https://www.facebook.com/groups/586680908701659",
-  twitter: "https://twitter.com/",
 } as const;
 
 export const CONTACT = {
