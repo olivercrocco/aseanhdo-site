@@ -54,7 +54,7 @@ export default function HomePage() {
       <Section tone="card" className="border-y border-border">
         <SectionHeading
           eyebrow="What we do"
-          title="A regional institution for human development"
+          title="A regional civil society organisation for human development"
           lede={SITE.mission}
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
