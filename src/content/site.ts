@@ -43,7 +43,7 @@ export const SOCIAL = {
 
 export const CONTACT = {
   // Public-facing contact details to be confirmed with AHDO once back-end access lands.
-  email: "info@aseanhdo.com",
+  email: "bob.aubrey@bobaubreyassociates.com",
   base: "Jakarta, Indonesia",
   formCategories: [
     "Membership",
