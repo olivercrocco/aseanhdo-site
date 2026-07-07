@@ -204,6 +204,23 @@ export default function HomePage() {
         </Container>
       </section>
 
+      {/* ===== Signing ceremony (partnership photo band) ===== */}
+      <Section tone="sunken" className="border-y border-border">
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+          <Photo src={MEDIA.signing.src} alt={MEDIA.signing.alt} ratio="16 / 10" />
+          <div className="flex flex-col gap-5">
+            <Eyebrow>Across the region</Eyebrow>
+            <h2 className="font-display text-[clamp(1.75rem,3vw,2.375rem)] font-medium leading-[1.14] tracking-[-0.012em] text-foreground">
+              Working alongside ASEAN&rsquo;s institutions and partners
+            </h2>
+            <p className="measure text-[1.125rem] leading-relaxed text-foreground-secondary">
+              AHDO works alongside ASEAN institutions, governments and civil society to
+              advance human development across the region.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* ===== Events & programmes ===== */}
       <Section tone="card" className="border-y border-border">
         <div className="grid gap-10 lg:grid-cols-2">
