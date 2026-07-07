@@ -26,11 +26,11 @@ export type NavItem = {
 // New site information architecture (similar to legacy, with The Index added).
 export const NAV: NavItem[] = [
   { label: "About", href: "/about", description: "Who we are and what we stand for" },
+  { label: "The Index", href: "/index-ahdi", description: "The ASEAN Human Development Index" },
+  { label: "Courses", href: "/courses", description: "Professional certification" },
   { label: "Publications", href: "/publications", description: "Books, white papers and reports" },
   { label: "Events", href: "/events", description: "Conferences, summits and forums" },
   { label: "News", href: "/news", description: "Insight on people and work in ASEAN" },
-  { label: "The Index", href: "/index-ahdi", description: "The ASEAN Human Development Index" },
-  { label: "Courses", href: "/courses", description: "Professional certification" },
   { label: "Accreditations", href: "/accreditations", description: "Recognition for organisations" },
   { label: "Membership", href: "/membership", description: "Join the regional community" },
 ];
