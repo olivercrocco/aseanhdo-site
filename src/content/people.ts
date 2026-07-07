@@ -19,7 +19,7 @@ export const FOUNDER: Person = {
   name: "Dr Bob Aubrey",
   initials: "BA",
   role: "Founder & Chairman of the Advisory Board",
-  bio: "Bob Aubrey founded AHDO in 2018 to serve the community of human development professionals across ASEAN and to champion the shift from human resources to human development. A philosopher by training, he has spent four decades helping people and organisations develop, and has authored books including Leading Human Development in ASEAN and Human Development Careers.",
+  bio: "Bob Aubrey founded AHDO in 2018 to serve the community of human development professionals across ASEAN and to champion the shift from human resources to human development. A philosopher by training, he has spent four decades in human development across six continents, and has authored thirteen books including Leading Human Development in ASEAN, Human Development Careers and The Ethics of ASEAN.",
   credentials: [
     "PhD in Philosophy, University of Paris",
     "Chartered Fellow, CIPD (FCIPD)",

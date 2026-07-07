@@ -28,15 +28,6 @@ export default function HomePage() {
         <div aria-hidden="true" className="loom-grid absolute inset-0" />
         <Container className="relative grid items-center gap-12 pb-16 pt-12 lg:grid-cols-[1.5fr_1fr] lg:pb-24 lg:pt-16">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-[0.8125rem] tracking-wide text-muted-foreground">
-              <span>11 STATES</span>
-              <span aria-hidden="true">·</span>
-              <span>19 CLUSTERS</span>
-              <span aria-hidden="true">·</span>
-              <span>1990–2023</span>
-              <AccreditationPill className="ml-1" />
-            </div>
-
             <h1 className="font-display text-[clamp(2.75rem,6vw,4.5rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground">
               Understanding how Southeast Asia develops its people.
             </h1>
