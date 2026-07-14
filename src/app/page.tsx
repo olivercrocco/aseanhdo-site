@@ -29,11 +29,11 @@ export default function HomePage() {
         <Container className="relative grid items-center gap-12 pb-16 pt-12 lg:grid-cols-[1.5fr_1fr] lg:pb-24 lg:pt-16">
           <div className="flex flex-col gap-6">
             <h1 className="font-display text-[clamp(2.75rem,6vw,4.5rem)] font-semibold leading-[1.04] tracking-[-0.02em] text-foreground">
-              Human development is ASEAN&rsquo;s future
+              {SITE.heroHeadline}
             </h1>
 
             <p className="measure text-[1.25rem] leading-relaxed text-foreground-secondary">
-              Building the field of human development in ASEAN.
+              {SITE.heroLede}
             </p>
 
             <div className="mt-2 flex flex-wrap items-center gap-3">
@@ -50,14 +50,19 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* ===== Mission + four functions ===== */}
+      {/* ===== Introduction ===== */}
       <Section tone="card" className="border-y border-border">
-        <SectionHeading
-          eyebrow="What we do"
-          title="A regional civil society organisation for human development"
-          lede={SITE.mission}
-        />
-        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="flex max-w-[68ch] flex-col gap-5 text-[1.125rem] leading-relaxed text-foreground-secondary">
+          {SITE.introParagraphs.map((para) => (
+            <p key={para.slice(0, 32)}>{para}</p>
+          ))}
+        </div>
+      </Section>
+
+      {/* ===== What we do (four functions) ===== */}
+      <Section>
+        <SectionHeading title="What we do" />
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
           {CORE_FUNCTIONS.map((fn) => (
             <Card key={fn.number} href={fn.href} className="gap-4">
               <span className="font-mono text-[0.875rem] font-medium text-accent-text">
@@ -67,6 +72,19 @@ export default function HomePage() {
               <p className="text-[1rem] leading-relaxed text-foreground-secondary">
                 {fn.blurb}
               </p>
+              <ul className="mt-1 flex flex-col gap-2">
+                {fn.points.map((point) => (
+                  <li
+                    key={point}
+                    className="flex items-baseline gap-3 text-[0.9375rem] leading-relaxed text-foreground-secondary"
+                  >
+                    <span aria-hidden="true" className="font-mono text-[0.875rem] text-accent-text">
+                      —
+                    </span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </Card>
           ))}
         </div>
