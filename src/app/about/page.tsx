@@ -41,23 +41,9 @@ export default function AboutPage() {
               title="From human resources to human development"
             />
             <div className="mt-8 flex flex-col gap-5 text-[1.125rem] leading-relaxed text-foreground-secondary">
-              <p>
-                From the beginning, AHDO has been guided by the conviction that
-                ASEAN&rsquo;s future lies in making human development central to regional
-                development. People are ends in themselves, with the aspiration,
-                potential and right to develop over their entire lifecycle. AHDO
-                mainstreams human development in all its forms, from human development
-                projects to policy and research.
-              </p>
-              <p>
-                AHDO is deliberately ASEAN-grounded and people-centred. Founded in 2018
-                and based in Jakarta, AHDO is an independent, non-profit civil society
-                organisation that supports the priorities that the region itself has
-                defined, rather than importing frameworks built elsewhere. Our work is
-                rooted in the diversity of the eleven ASEAN Member States, attentive to
-                regional culture and contexts, and gives voice to ASEAN&rsquo;s
-                leadership role in the world.
-              </p>
+              {SITE.introParagraphs.map((para) => (
+                <p key={para.slice(0, 32)}>{para}</p>
+              ))}
               <p>
                 As an organisation recognised for thought leadership, AHDO has published
                 foundational books on human development leadership in ASEAN and created
